@@ -7,19 +7,15 @@ const bookController = require("./../controller/bookController");
 const router = express.Router();
 // 2) Make route
 // - 1 Routes for every one
-router.get("/", bookController.getAllBooks);
 router.get("/:id", bookController.getBook);
-// - 2 Routes for admin and writers
-router
-  .route("/:id", bookController)
-  .patch(bookController.updateBook)
-  .post(bookController.createBook);
-// - 3 Routes for admins
-router.route("/:id", bookController).delete(bookController.deleteBook);
-// 3) exprot the router
+router.get("/", bookController.getAllBooks);
 
-// testing
-bookController.getAllBooks();
-bookController.getBook();
-bookController.createBook();
-bookController.deleteBook();
+// - 2 Routes for admin and writers
+router.post("/", bookController.createBook);
+router.route("/:id").patch(bookController.updateBook);
+// - 3 Routes for admins
+// router.route("/:id", bookController).delete(bookController.deleteBook);
+// 3) exprot the router
+module.exports = router;
+
+// // testing
