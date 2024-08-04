@@ -1,8 +1,9 @@
 const dataController = require("./dataController");
 const Book = require("./../models/bookMudel");
+const catchAysnc = require("../utils/catchAysnc");
 
-exports.createBook = dataController.createOne(Book);
-exports.getBook = dataController.getOne(Book);
-exports.deleteBook = dataController.deleteOne(Book);
-exports.updateBook = dataController.updateOne(Book);
-exports.getAllBooks = dataController.getAll(Book);
+exports.createBook = catchAysnc(dataController.createOne(Book));
+exports.getBook = catchAysnc(dataController.getOne(Book));
+exports.deleteBook = catchAysnc(dataController.deleteOne(Book));
+exports.updateBook = catchAysnc(dataController.updateOne(Book));
+exports.getAllBooks = catchAysnc(dataController.getAll(Book));
