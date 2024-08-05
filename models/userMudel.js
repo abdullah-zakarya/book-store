@@ -68,7 +68,7 @@ userSchema.methods.createPasswordResetToken = function () {
     .createHash("sha256")
     .update(newToken)
     .digest("hex");
-  this.passwordResetExpires = Date.now() + 10 * 60 * 1000; // صلاحية لمدة 10 دقائق
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
   return newToken;
 };
 
