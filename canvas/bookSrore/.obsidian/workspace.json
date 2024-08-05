@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "f590036b7ed7cfd1",
+    "type": "split",
+    "children": [
+      {
+        "id": "3cc0d3b9a087db27",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97027726a303c809",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "بدون عنوان.canvas",
+                "viewState": {
+                  "x": -375.3442409666144,
+                  "y": -25.350299381754937,
+                  "zoom": -0.5555555216471355
+                }
+              }
+            }
+          },
+          {
+            "id": "bffbbeeac28755ba",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "بدون عنوان.canvas",
+                "viewState": {
+                  "x": -764.397309030441,
+                  "y": -467.29156292347,
+                  "zoom": -0.5555555216471356
+                }
+              }
+            }
+          },
+          {
+            "id": "56a16f6604ef5f21",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "بدون عنوان.canvas",
+                "viewState": {
+                  "x": -449.99279409173425,
+                  "y": -450.15491465966363,
+                  "zoom": -0.5555555216471355
+                }
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d6b59aed47fae91",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd08026c0138a7af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05af324b3a74f5d9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a499db187f92082a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#h1",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "56f47064bdb8c1b4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "cbdd7a6f2a7af37d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d0861797502afb20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34a8dcfa112cd71e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "بدون عنوان.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a8c4f46f7d85517e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "بدون عنوان.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "763030ebec825c97",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9913c297120dad9d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "بدون عنوان.canvas"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:افتح الانتقال السريع": false,
+      "graph:فتح العرض البياني": false,
+      "canvas:إنشاء لوحة بصرية جديدة": false,
+      "templates:إدراج قالب": false,
+      "daily-notes:فتح ملاحظة اليوم": false,
+      "command-palette:فتح لوحة الأوامر": false
+    }
+  },
+  "active": "56a16f6604ef5f21",
+  "lastOpenFiles": [
+    "بدون عنوان 1.canvas",
+    "بشسيبتنم.md",
+    "بدون عنوان.canvas",
+    "مرحبًا.md"
+  ]
+}
