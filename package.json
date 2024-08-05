@@ -13,8 +13,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
+    "eslint": "^8.0.0",
     "express": "^4.19.2",
     "mongoose": "^5.13.22",
+    "save-dev": "^0.0.1-security",
     "validator": "^13.12.0"
   }
 }

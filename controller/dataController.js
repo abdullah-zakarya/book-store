@@ -11,7 +11,7 @@ const send = (res, status, doc) =>
 exports.getOne = (modele) => {
   return async (req, res, next) => {
     const doc = await modele.findById(req.params.id);
-    if (!doc) return new AppError("there is not info with this id");
+    if (!doc) return next(new AppError("there is not info with this id"));
     send(res, 200, doc);
   };
 };

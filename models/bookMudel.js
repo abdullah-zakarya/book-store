@@ -25,11 +25,12 @@ const bookSchema = new mongoose.Schema(
 );
 
 // 3) Schema methodes
-bookSchema.pre("findOne", function () {
+bookSchema.pre("findOne", function (next) {
   this.populate({
     path: "reviews",
-    select: "+content +userId",
+    select: "content user",
   });
+  next();
 });
 
 // 4) Export modele
