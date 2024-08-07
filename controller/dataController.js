@@ -1,6 +1,6 @@
-const catchAysnc = require('../utils/catchAysnc');
+const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/AppError');
-catchAysnc;
+catchAsync;
 const send = (res, status, doc) =>
   res.status(status).json({
     status: 'success',

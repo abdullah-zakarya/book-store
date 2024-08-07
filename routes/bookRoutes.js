@@ -1,18 +1,29 @@
 // 1) import mudels
-const express = require("express");
+const express = require('express');
 
-const bookController = require("./../controller/bookController");
+const bookController = require('./../controller/bookController');
+const authController = require('./../controller/authController');
+const Book = require('../models/bookMudel');
+
 // 2) initlize the router
 
 const router = express.Router();
 // 2) Make route
-// - 1 Routes for every one
-router.get("/:id", bookController.getBook);
-router.get("/", bookController.getAllBooks);
+router
+  .route('/')
+  .get(authController.isLogin, bookController.getAllBooks)
+  .post(
+    authController.login,
+    authController.restrictTo('admin'),
+    bookController.createBook
+  );
 
-// - 2 Routes for admin and writers
-router.post("/", bookController.createBook);
-router.route("/:id").patch(bookController.updateBook);
+router.use(authController.login, authController.restrictTo('admin'));
+
+router
+  .route('/:id')
+  .patch(bookController.updateBook)
+  .delete(bookController.deleteBook);
 // - 3 Routes for admins
 // router.route("/:id", bookController).delete(bookController.deleteBook);
 // 3) exprot the router

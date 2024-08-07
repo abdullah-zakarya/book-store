@@ -2,7 +2,9 @@ const saleController = require('../controller/saleController');
 const express = require('express');
 
 const router = express.Router();
+router.route('/buy', saleController.createSale);
 
+// from admin interface
 router
   .route('/')
   .get(saleController.getAllSales)

@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 
-const User = require('./../models/userModel');
+const User = require('./../models/userMudel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/AppError');
 
@@ -10,7 +10,8 @@ const AppError = require('../utils/AppError');
 // 1) token creator
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_COOKIES_EXPIRES_IN * 24 * 60 * 60 * 1000,
+    // expiresIn: process.env.JWT_COOKIES_EXPIRES_IN * 24 * 60 * 60 * 1000,
+    expiresIn: 90 * 24 * 60 * 60 * 1000,
   });
 };
 
@@ -44,7 +45,7 @@ const filterObj = (obj, ...valides) => {
 };
 
 // 4) sending email
-const sendEmail = async (req, user, resetToken) => {
+const sendEmail = async (req, res, next, user, resetToken) => {
   try {
     const resetURL = `${req.protocol}://${req.get(
       'host'
@@ -96,24 +97,25 @@ exports.login = catchAsync(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
-exports.logout = (req, res) => {
+exports.logout = catchAsync((req, res) => {
   res.cookie('jwt', 'loggedout', {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
   });
   res.status(200).json({ status: 'success' });
-};
+});
 
 // -- check user --//
 // 1) is user login
 // - 1 token function
 const headerToken = (req) => {
   const token = req.headers.authorization?.split(' ');
+
   return token && token[0] === 'Bearer' ? token[1] : undefined;
 };
 
 // - 2 cookie function
-const cookieToken = (req) => req.cookies.jwt;
+const cookieToken = (req) => req?.cookies?.jwt;
 
 // - 3 main function
 exports.isLogin = catchAsync(async (req, res, next) => {
@@ -123,7 +125,8 @@ exports.isLogin = catchAsync(async (req, res, next) => {
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
   const user = await User.findById(decoded.id);
 
-  if (!user || !user.active) return next(new AppError('Invalid login', 401));
+  if (!user || user.active === false)
+    return next(new AppError('Invalid login', 401));
 
   req.user = user;
   res.locals.user = user;
@@ -150,8 +153,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   const newToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
-
-  await sendEmail(req, user, newToken);
+  await sendEmail(req, res, next, user, newToken);
 });
 
 // 2) reset password
@@ -160,7 +162,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     .createHash('sha256')
     .update(req.params.token)
     .digest('hex');
-
   const user = await User.findOne({
     passwordResetToken: hashedToken,
     passwordResetExpires: { $gt: Date.now() },

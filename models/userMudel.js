@@ -64,6 +64,7 @@ userSchema.methods.correctPassword = async function (
 // -- method to create password reset token
 userSchema.methods.createPasswordResetToken = function () {
   const newToken = crypto.randomBytes(32).toString('hex');
+  console.log('token from model:', newToken);
   this.passwordResetToken = crypto
     .createHash('sha256')
     .update(newToken)

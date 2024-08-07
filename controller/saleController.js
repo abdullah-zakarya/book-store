@@ -1,9 +1,9 @@
-const dataController = require("./dataController");
-const Sale = require("./../models/saleMudel");
-const catchAysnc = require("../utils/catchAysnc");
+const dataController = require('./dataController');
+const Sale = require('./../models/saleMudel');
+const catchAsync = require('../utils/catchAsync');
 
-exports.createSale = catchAysnc(dataController.createOne(Sale));
-exports.getSale = catchAysnc(dataController.getOne(Sale));
-exports.deleteSale = catchAysnc(dataController.deleteOne(Sale));
-exports.updateSale = catchAysnc(dataController.updateOne(Sale));
-exports.getAllSales = catchAysnc(dataController.getAll(Sale));
+exports.createSale = catchAsync(dataController.createOne(Sale));
+exports.getSale = catchAsync(dataController.getOne(Sale));
+exports.deleteSale = catchAsync(dataController.deleteOne(Sale));
+exports.updateSale = catchAsync(dataController.updateOne(Sale));
+exports.getAllSales = catchAsync(dataController.getAll(Sale));

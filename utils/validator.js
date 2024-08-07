@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 // const validator = require("validator");
 
 class Validate {
@@ -29,7 +29,7 @@ class Validate {
 
   email() {
     this.out.type = String;
-    this.out.required = [true, "Please provide your email"];
+    this.out.required = [true, 'Please provide your email'];
     this.out.unique = true;
     this.out.lowercase = true;
     // this.out.validate = [validator.isEmail, "Please provide a valid email"];
