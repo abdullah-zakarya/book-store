@@ -14,13 +14,14 @@ const mess = 'The password and confirm is not the same';
 const userSchema = new mongoose.Schema(
   {
     name: vld('name').string().require().out,
+    role: vld('role').string().enum('user', 'admin').default('user').out,
+    email: vld('email').email().out,
     userName: vld('userName').string().require().unique().out,
-    email: vld('email').email().out, //
-    password: vld('password').string().require().out,
+    password: vld('password').string().require().unselected().out,
     passwordConfirm: vld('passConf').string().require().vldfunc(conf, mess).out,
     createAt: vld('createAt').date().default(Date.now).out,
     cart: [vld('cart').ref('Book').out],
-    seles: [vld('seles').ref('Sele').out],
+    sales: [vld('seles').ref('Sele').out],
     active: vld('active').boolean().default(true).unselected().out,
     passwordChangedAt: { type: Date },
     passwordResetToken: { type: String },
@@ -53,6 +54,15 @@ userSchema.pre('save', function (next) {
   next();
 });
 
+userSchema.pre('findOne', function (next) {
+  // this.populate({
+  //   path: 'sales',
+  //   select: '+book',
+  // });
+  this.populate({ path: 'cart', select: 'name' });
+  next();
+});
+
 // -- method to compare passwords
 userSchema.methods.correctPassword = async function (
   candidatePassword,
@@ -64,7 +74,6 @@ userSchema.methods.correctPassword = async function (
 // -- method to create password reset token
 userSchema.methods.createPasswordResetToken = function () {
   const newToken = crypto.randomBytes(32).toString('hex');
-  console.log('token from model:', newToken);
   this.passwordResetToken = crypto
     .createHash('sha256')
     .update(newToken)

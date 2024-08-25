@@ -11,6 +11,7 @@ const reviewSchema = new mongoose.Schema({
   createdAt: vld('createdAt').date().default(Date.now).out,
 });
 
+reviewSchema.index({ user: 1, book: 1 }, { unique: true });
 // 3) Schema methodes
 reviewSchema.pre(/^find/, function (next) {
   this.populate({

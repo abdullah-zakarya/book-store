@@ -1,16 +1,12 @@
-const reviewController = require("../controller/reviewController");
-const express = require("express");
+const reviewController = require('../controller/reviewController');
+const express = require('express');
 
-const router = express.Router();
-
-router
-  .route("/")
-  .get(reviewController.getAllReviews)
-  .post(reviewController.createReview);
+const router = express.Router({ mergeParams: true });
 
 router
-  .route("/:id")
-  .get(reviewController.getReview)
+  .route('/')
+  .get(reviewController.getMyReview)
+  .post(reviewController.createReview)
   .patch(reviewController.updateReview)
   .delete(reviewController.deleteReview);
 

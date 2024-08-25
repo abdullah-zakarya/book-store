@@ -2,24 +2,33 @@
 const express = require('express');
 
 const bookController = require('./../controller/bookController');
+const saleConroller = require('./../controller/saleController');
+const reviewRoutes = require('./reviewRoutes');
 const authController = require('./../controller/authController');
-const Book = require('../models/bookMudel');
 
 // 2) initlize the router
 
 const router = express.Router();
 // 2) Make route
+// all books
+router.get('/', bookController.getAllBooks);
+// one book
+router.get('/:slug', bookController.getBookBySlug);
+// one book opration
+router.use(authController.isLogin);
+// sale opration
+router.get('/:slug/addToCart', saleConroller.addToCart);
+router.post('/:slug/buy', saleConroller.buy);
+// review opration
+router.use('/:slug/reviews', reviewRoutes);
+
 router
   .route('/')
-  .get(authController.isLogin, bookController.getAllBooks)
-  .post(
-    authController.login,
-    authController.restrictTo('admin'),
-    bookController.createBook
-  );
+  .get(bookController.getAllBooks)
+  .post(bookController.createBook);
 
-router.use(authController.login, authController.restrictTo('admin'));
-
+router.use(authController.restrictTo('admin'));
+router.post('/addQuantity', bookController.addQuantity);
 router
   .route('/:id')
   .patch(bookController.updateBook)
@@ -28,5 +37,3 @@ router
 // router.route("/:id", bookController).delete(bookController.deleteBook);
 // 3) exprot the router
 module.exports = router;
-
-// // testing

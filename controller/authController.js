@@ -49,7 +49,7 @@ const sendEmail = async (req, res, next, user, resetToken) => {
   try {
     const resetURL = `${req.protocol}://${req.get(
       'host'
-    )}/api/v1/users/resetPassword/${resetToken}`;
+    )}/api/v1/user/resetPassword/${resetToken}`;
     console.log(resetURL);
 
     res.status(200).json({
@@ -86,11 +86,15 @@ exports.signup = catchAsync(async (req, res, next) => {
 
 // 2) login
 exports.login = catchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
-  if (!email || !password)
-    return next(new AppError('The password and email are required', 400));
+  const { email, password, userName } = req.body;
+  if (!email && !userName)
+    return next(new AppError('The userName or email are required', 400));
+  if (!password) next(new AppError('the password is required'));
 
-  const user = await User.findOne({ email }).select('+password');
+  const user =
+    email !== undefined
+      ? await User.findOne({ email }).select('+password')
+      : await User.findOne({ userName }).select('+password');
   if (!user || !(await user.correctPassword(password, user.password)))
     return next(new AppError('The password or email is wrong', 401));
 
@@ -110,7 +114,6 @@ exports.logout = catchAsync((req, res) => {
 // - 1 token function
 const headerToken = (req) => {
   const token = req.headers.authorization?.split(' ');
-
   return token && token[0] === 'Bearer' ? token[1] : undefined;
 };
 
@@ -148,7 +151,9 @@ exports.restrictTo = (...roles) => {
 // -- password methods -- //
 // 1) forgot password
 exports.forgotPassword = catchAsync(async (req, res, next) => {
-  const user = await User.findOne({ email: req.body.email });
+  const user = req.body.email
+    ? await User.findOne({ email: req.body.email })
+    : await User.findOne({ userName: req.body.userName });
   if (!user) return next(new AppError('Your email does not exist', 404));
 
   const newToken = user.createPasswordResetToken();
@@ -194,11 +199,18 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
 // 2) update me
 exports.updateMe = catchAsync(async (req, res, next) => {
-  const updateValues = filterObj(req.body, 'name', 'email', 'photo');
+  const updateValues = filterObj(
+    req.body,
+    'name',
+    'email',
+    'photo',
+    'userName'
+  );
   const user = await User.findByIdAndUpdate(req.user.id, updateValues, {
     new: true,
     runValidators: true,
   });
+  user.password = undefined;
 
   res.status(200).json({
     status: 'success',
@@ -214,5 +226,15 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   res.status(204).json({
     status: 'success',
     data: null,
+  });
+});
+
+exports.showMe = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.user._id);
+  res.status(200).json({
+    status: 'success',
+    date: {
+      user,
+    },
   });
 });

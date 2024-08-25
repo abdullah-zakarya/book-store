@@ -1,25 +1,18 @@
 {
   "main": {
-    "id": "f590036b7ed7cfd1",
+    "id": "cab07c9d23ec74d3",
     "type": "split",
     "children": [
       {
-        "id": "144e24c65aaf7d83",
+        "id": "2390b104f835a968",
         "type": "tabs",
         "children": [
           {
-            "id": "b787d0f9a61c26a2",
+            "id": "f777a911da6adb93",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "canvas.canvas",
-                "viewState": {
-                  "x": -216.0560516752473,
-                  "y": -717.0034897012247,
-                  "zoom": 1
-                }
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -28,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "5d6b59aed47fae91",
+    "id": "d33b7e0b301aa0ec",
     "type": "split",
     "children": [
       {
-        "id": "dd08026c0138a7af",
+        "id": "a6d4ebd8dd04feb6",
         "type": "tabs",
         "children": [
           {
-            "id": "05af324b3a74f5d9",
+            "id": "145350ea0026a283",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -46,12 +39,12 @@
             }
           },
           {
-            "id": "a499db187f92082a",
+            "id": "ccf22f93b8d8e21a",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#h1",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +54,7 @@
             }
           },
           {
-            "id": "56f47064bdb8c1b4",
+            "id": "5d78bc39ccf3f4ce",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,33 +65,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "cbdd7a6f2a7af37d",
+    "id": "5fb8b1c6346c4ada",
     "type": "split",
     "children": [
       {
-        "id": "d0861797502afb20",
+        "id": "ef17a8519a1212e2",
         "type": "tabs",
         "children": [
           {
-            "id": "9913c297120dad9d",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "canvas.canvas"
-              }
-            }
-          },
-          {
-            "id": "34a8dcfa112cd71e",
+            "id": "f855f5e338c4e7b1",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "canvas.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,19 +92,18 @@
             }
           },
           {
-            "id": "a8c4f46f7d85517e",
+            "id": "89bdc098ada525c0",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "canvas.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "763030ebec825c97",
+            "id": "934cf55a03eb4503",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -130,6 +111,14 @@
                 "sortOrder": "frequency",
                 "useHierarchy": true
               }
+            }
+          },
+          {
+            "id": "fd5caa30783d64a2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
             }
           }
         ]
@@ -144,22 +133,11 @@
       "switcher:افتح الانتقال السريع": false,
       "graph:فتح العرض البياني": false,
       "canvas:إنشاء لوحة بصرية جديدة": false,
+      "daily-notes:فتح ملاحظة اليوم": false,
       "templates:إدراج قالب": false,
-      "command-palette:فتح لوحة الأوامر": false,
-      "daily-notes:فتح ملاحظة اليوم": false
+      "command-palette:فتح لوحة الأوامر": false
     }
   },
-  "active": "b787d0f9a61c26a2",
-  "lastOpenFiles": [
-    "بدون عنوان",
-    "canvas.canvas",
-    "chick list.md",
-    "بدون عنوان 1.canvas",
-    "بدون عنوان.md",
-    "بدون عنوان.canvas",
-    "٢٠٢٤-٠٨-١٣.md",
-    "بدون عنوان 2.canvas",
-    "بشسيبتنم.md",
-    "مرحبًا.md"
-  ]
+  "active": "f777a911da6adb93",
+  "lastOpenFiles": []
 }

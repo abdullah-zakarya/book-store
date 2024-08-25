@@ -56,15 +56,14 @@ class Validate {
     return this;
   }
 
+  enum(...enums) {
+    this.out.enum = enums;
+    return this;
+  }
   range(start, end) {
     if (start)
       this.out.min = [start, `${this.fieldName} must be minimum ${start}`];
     if (end) this.out.max = [end, `${this.fieldName} must be maximum ${end}`];
-    return this;
-  }
-
-  enum(...enums) {
-    this.out.enum = enums;
     return this;
   }
 
