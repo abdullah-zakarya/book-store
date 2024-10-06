@@ -1,0 +1,165 @@
+{
+  "main": {
+    "id": "f590036b7ed7cfd1",
+    "type": "split",
+    "children": [
+      {
+        "id": "144e24c65aaf7d83",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b787d0f9a61c26a2",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "canvas.canvas",
+                "viewState": {
+                  "x": -216.0560516752473,
+                  "y": -717.0034897012247,
+                  "zoom": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d6b59aed47fae91",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd08026c0138a7af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05af324b3a74f5d9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a499db187f92082a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#h1",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "56f47064bdb8c1b4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "cbdd7a6f2a7af37d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d0861797502afb20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9913c297120dad9d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "canvas.canvas"
+              }
+            }
+          },
+          {
+            "id": "34a8dcfa112cd71e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "canvas.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a8c4f46f7d85517e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "canvas.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "763030ebec825c97",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:افتح الانتقال السريع": false,
+      "graph:فتح العرض البياني": false,
+      "canvas:إنشاء لوحة بصرية جديدة": false,
+      "templates:إدراج قالب": false,
+      "command-palette:فتح لوحة الأوامر": false,
+      "daily-notes:فتح ملاحظة اليوم": false
+    }
+  },
+  "active": "b787d0f9a61c26a2",
+  "lastOpenFiles": [
+    "بدون عنوان",
+    "canvas.canvas",
+    "chick list.md",
+    "بدون عنوان 1.canvas",
+    "بدون عنوان.md",
+    "بدون عنوان.canvas",
+    "٢٠٢٤-٠٨-١٣.md",
+    "بدون عنوان 2.canvas",
+    "بشسيبتنم.md",
+    "مرحبًا.md"
+  ]
+}
